@@ -13,6 +13,9 @@ BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 if [ -e "$ENV_DIR/DATABASE_URL" ]; then
   export DATABASE_URL="$(cat $ENV_DIR/DATABASE_URL)";
 fi
+if [ -e "$ENV_DIR/SERVICE_NAME" ]; then
+  export SERVICE_NAME="$(cat $ENV_DIR/SERVICE_NAME)";
+fi
 
 # Set defaults for our configuration variables.  Stable Rust is sufficiently
 # stable at this point that I think we can just default it.
